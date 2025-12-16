@@ -19,6 +19,7 @@ app.use(helmet({
             "script-src": ["'self'", "cdn.jsdelivr.net"],
             // Autoriser les styles et les polices (icônes) de jsdelivr
             "style-src": ["'self'", "cdn.jsdelivr.net", "'unsafe-inline'"],
+            "connect-src": ["'self'", "cdn.jsdelivr.net"],
             "font-src": ["'self'", "cdn.jsdelivr.net"],
             "img-src": ["'self'", "data:"],
         },
