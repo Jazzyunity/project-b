@@ -15,8 +15,12 @@ app.use(helmet({
     contentSecurityPolicy: {
         directives: {
             "default-src": ["'self'"],
-            "script-src": ["'self'"], // Empêche l'exécution de scripts tiers non autorisés
-            "style-src": ["'self'", "'unsafe-inline'"],
+            // Autoriser les scripts de jsdelivr
+            "script-src": ["'self'", "cdn.jsdelivr.net"],
+            // Autoriser les styles et les polices (icônes) de jsdelivr
+            "style-src": ["'self'", "cdn.jsdelivr.net", "'unsafe-inline'"],
+            "font-src": ["'self'", "cdn.jsdelivr.net"],
+            "img-src": ["'self'", "data:"],
         },
     },
 }));

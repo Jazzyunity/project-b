@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Application Sécurisée</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="icon" href="data:,">
@@ -13,21 +16,105 @@
 
 <body>
 
-    <nav>
-        <a href="/">Accueil</a>
-        <a href="/contact">Contact</a>
-        <a href="/login">Connexion</a>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <i class="bi bi-cpu-fill fs-3 me-2 text-primary"></i>
+                <span class="fw-bold text-uppercase tracking-wider">NodeApp</span>
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/"><i class="bi bi-house-door me-1"></i> Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-primary btn-sm px-4 rounded-pill" href="/login">
+                            <i class="bi bi-box-arrow-in-right me-1"></i> Connexion
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <main>
-        <h1>Bienvenue sur mon application</h1>
-        <p id="status-message">Chargement de l'API...</p>
+    <main class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm rounded-4 p-3">
+                        <div class="card-body">
+                            <h5 class="fw-bold mb-3"><i class="bi bi-info-circle me-2"></i>Statut Système</h5>
+                            <hr class="text-muted opacity-25">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span>Serveur Node.js</span>
+                                <span class="badge rounded-pill bg-success-subtle text-success">Actif</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span>Sécurité</span>
+                                <span class="badge rounded-pill bg-primary-subtle text-primary">Helmet ON</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <section id="app-content">
-            <button id="fetch-btn">Vérifier l'état du serveur</button>
-        </section>
+                <div class="col-lg-8">
+                    <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border-0">
+                        <h2 class="fw-bold border-start border-primary border-5 ps-3 mb-4">Tableau de Bord</h2>
+                        <p class="text-muted">
+                            Cette structure utilise le système de grille de Bootstrap. Le fond est réglé sur
+                            <code>#F2F2F2</code>
+                            et le contenu principal est encapsulé dans une carte blanche pour un contraste optimal et
+                            une lisibilité accrue.
+                        </p>
+
+                        <div class="row row-cols-1 row-cols-md-2 g-3 mt-4">
+                            <div class="col">
+                                <div class="p-3 border rounded-3 bg-light">
+                                    <i class="bi bi-shield-check text-primary fs-2"></i>
+                                    <h6 class="mt-2 fw-bold">Sécurité</h6>
+                                    <small class="text-muted">Protection CSRF et Headers Helmet activés.</small>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="p-3 border rounded-3 bg-light">
+                                    <i class="bi bi-lightning-charge text-warning fs-2"></i>
+                                    <h6 class="mt-2 fw-bold">Performance</h6>
+                                    <small class="text-muted">Vanilla JS pur sans bibliothèques lourdes.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
+    <footer class="bg-white border-top py-4 mt-auto">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <span class="text-muted">&copy; 2025 NodeApp. Développé avec <i
+                            class="bi bi-heart-fill text-danger"></i></span>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <a href="#" class="text-muted me-3 text-decoration-none"><i class="bi bi-github"></i> GitHub</a>
+                    <a href="#" class="text-muted text-decoration-none"><i class="bi bi-twitter-x"></i> Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script type="module" src="/js/main.js"></script>
 </body>
 

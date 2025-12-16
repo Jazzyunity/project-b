@@ -1,0 +1,22 @@
+:root {
+    --bg-custom: #F2F2F2;
+}
+
+body {
+    background-color: var(--bg-custom);
+    /* Setup pour le sticky footer */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    /* Pousse le footer vers le bas */
+}
+
+.navbar {
+    backdrop-filter: blur(10px);
+    /* Effet moderne sur navbar sticky */
+    background-color: rgba(33, 37, 41, 0.95) !important;
+}
