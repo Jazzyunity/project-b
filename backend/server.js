@@ -55,11 +55,15 @@ app.use(express.static(path.join(__dirname, '../frontend/public')));
 
 // Import des routeurs
 const viewRouter = require('./routes/view.routes');
-const apiRouter = require('./routes/api.routes');
+const authRouter = require('./routes/auth.routes');
+const gameRouter = require('./routes/game.routes');
+const eventRouter = require('./routes/event.routes');
 
 // Utilisation des routeurs
 app.use('/', viewRouter);      // Pour servir les pages HTML
-app.use('/api/v1', apiRouter); // Pour la logique de données (versionnée v1)
+app.use('/api/v1/auth', authRouter); // Pour la logique de données (versionnée v1)
+app.use('/api/v1/auth', gameRouter); // Pour la logique de données (versionnée v1)
+app.use('/api/v1/auth', eventRouter); // Pour la logique de données (versionnée v1)
 
 // --- GESTION D'ERREUR GLOBALE (Best Practice) ---
 app.use((err, req, res, next) => {
