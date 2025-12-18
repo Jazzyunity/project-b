@@ -9,8 +9,8 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(publicPath, 'index.html'));
 });
 
-router.get('/contact', (req, res) => {
-    res.sendFile(path.join(publicPath, 'contact.html'));
+router.get('/submit', (req, res) => {
+    res.sendFile(path.join(publicPath, 'submit.html'));
 });
 
 router.get('/login', (req, res) => {
