@@ -13,3 +13,5 @@ const protect = (req, res, next) => {
         res.status(401).json({ message: "Token invalide" });
     }
 };
+
+module.exports = { protect };

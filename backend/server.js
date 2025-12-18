@@ -3,6 +3,7 @@ const path = require('path');
 const helmet = require('helmet');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
+const cookieParser = require('cookie-parser')
 require('dotenv').config();
 
 const app = express();
@@ -16,9 +17,10 @@ app.use(helmet({
         directives: {
             "default-src": ["'self'"],
             // Autoriser les scripts de jsdelivr
-            "script-src": ["'self'", "cdn.jsdelivr.net"],
+            "script-src": ["'self'", "cdn.jsdelivr.net", "'unsafe-inline'"],
             // Autoriser les styles et les polices (icônes) de jsdelivr
             "style-src": ["'self'", "cdn.jsdelivr.net", "'unsafe-inline'"],
+            "worker-src": ["'self'", "blob:"],
             "connect-src": ["'self'", "cdn.jsdelivr.net"],
             "font-src": ["'self'", "cdn.jsdelivr.net"],
             "img-src": ["'self'", "data:"],

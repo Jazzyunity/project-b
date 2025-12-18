@@ -20,3 +20,8 @@ main {
     /* Effet moderne sur navbar sticky */
     background-color: rgba(33, 37, 41, 0.95) !important;
 }
+
+.hover-white:hover {
+    color: #ffffff !important;
+    transition: color 0.2s ease-in-out;
+}
