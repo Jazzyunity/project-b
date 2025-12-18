@@ -44,6 +44,7 @@ app.use(cors({
 // 4. Body Parser : Pour lire les données JSON et les formulaires
 app.use(express.json({ limit: '10kb' })); // Limite la taille pour éviter le dépassement de mémoire
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
+app.use(cookieParser());
 
 // 5. Fichiers Statiques : On sert le CSS, Images et JS Client
 app.use(express.static(path.join(__dirname, '../frontend/public')));
