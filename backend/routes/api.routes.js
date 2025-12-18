@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const { protect } = require('../middleware/auth.middleware');
 const GameIdea = require('../models/GameIdea');
+
+
+router.use(protect);
 
 // --- ROUTE : RÉCUPÉRER TOUTES LES IDÉES ---
 // GET /api/v1/games/all
