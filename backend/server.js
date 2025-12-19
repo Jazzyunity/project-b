@@ -60,13 +60,12 @@ const viewRouter = require('./routes/view.routes');
 const authRouter = require('./routes/auth.routes');
 const gameRouter = require('./routes/game.routes');
 const eventRouter = require('./routes/event.routes');
-const config = require('./configs/config');
 
 // Utilisation des routeurs
 app.use('/', viewRouter);      // Pour servir les pages HTML
 app.use('/api/v1/auth', authRouter); // Pour la logique de données (versionnée v1)
-app.use('/api/v1/auth', gameRouter); // Pour la logique de données (versionnée v1)
-app.use('/api/v1/auth', eventRouter); // Pour la logique de données (versionnée v1)
+app.use('/api/v1/game', gameRouter); // Pour la logique de données (versionnée v1)
+app.use('/api/v1/event', eventRouter); // Pour la logique de données (versionnée v1)
 
 // --- GESTION D'ERREUR GLOBALE (Best Practice) ---
 app.use((err, req, res, next) => {
