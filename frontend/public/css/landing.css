@@ -16,6 +16,54 @@ body {
 
 .fw-black { font-weight: 900; letter-spacing: -3px; }
 
+/* Style des cartes "Le Pilier" */
+.feature-card {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card.active {
+    border-color: var(--primary); /* Met en avant la carte centrale */
+    transform: scale(1.05);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 123, 255, 0.2);
+    border-color: var(--primary);
+}
+
+/* Icônes circulaires bleues */
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 123, 255, 0.1);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 2.5rem;
+    transition: 0.3s;
+}
+
+.feature-card:hover .icon-wrapper {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+/* Textes à l'intérieur des cartes blanches */
+.text-dark { color: #2d3436 !important; }
+.text-muted { color: #636e72 !important; }
+
+/* Adaptation pour la section sombre */
+.bg-black { background-color: #000000 !important; }
+
 /* Parallax Logic */
 .parallax-header {
     position: relative;

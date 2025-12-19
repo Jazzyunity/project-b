@@ -1,0 +1,82 @@
+/* Palette ProjectB */
+:root {
+    --primary: #007bff;
+    --black: #000000;
+    --white: #ffffff;
+    --bg-light: #f8f9fa;
+    --text-muted: #636e72;
+    --text-dark: #2d3436;
+}
+
+/* Base */
+body { 
+    background-color: var(--black); 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Carte d'Auth */
+.auth-card {
+    background: var(--white);
+    border-radius: 20px;
+    border: 2px solid var(--primary);
+    box-shadow: 0 20px 50px rgba(0, 123, 255, 0.2);
+    width: 100%;
+    max-width: 450px;
+    padding: 3rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Inputs */
+.form-control {
+    border-radius: 10px;
+    padding: 0.8rem;
+    border: 1px solid #dee2e6;
+    background-color: var(--bg-light);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.1);
+    border-color: var(--primary);
+    background-color: var(--white);
+}
+
+/* Boutons */
+.btn-auth {
+    border-radius: 10px;
+    padding: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.2s ease;
+}
+
+.btn-auth:active {
+    transform: scale(0.98);
+}
+
+/* Switch Login/Register */
+.auth-toggle {
+    cursor: pointer;
+    color: var(--primary);
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.auth-toggle:hover {
+    color: #0056b3;
+}
+
+/* Utilitaires */
+.hidden { display: none !important; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
