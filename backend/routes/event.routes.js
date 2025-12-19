@@ -4,6 +4,8 @@ const Event = require('../models/Event');
 const { protect } = require('../middlewares/auth.middleware');
 const { restrictTo } = require('../middlewares/role.middleware');
 
+const eventController = require('../controllers/eventController');
+
 // --- ROUTES PUBLIQUES (Consultation) ---
 
 router.use(protect); // Tout le monde doit être connecté

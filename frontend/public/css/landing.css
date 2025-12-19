@@ -1,0 +1,123 @@
+/* Palette de couleurs ProjectB */
+:root {
+    --primary: #007bff; /* Ton bleu original */
+    --black: #080808;
+    --dark-grey: #2d3436; /* Complémentaire : Gris Ardoise */
+    --light-grey: #636e72; /* Complémentaire : Acier */
+    --off-white: #f5f6fa;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--black);
+    color: var(--off-white);
+    overflow-x: hidden;
+}
+
+.fw-black { font-weight: 900; letter-spacing: -3px; }
+
+/* Parallax Logic */
+.parallax-header {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 120%;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1614850523296-e811cfbaf163?q=80&w=2070') center/cover;
+    background-attachment: fixed; /* L'effet de parallaxe simple */
+    z-index: -1;
+}
+
+.parallax-divider {
+    height: 60vh;
+    background: linear-gradient(rgba(0,123,255,0.2), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070') center/cover;
+    background-attachment: fixed;
+}
+
+/* Utilities */
+.bg-light-soft { background-color: var(--off-white); }
+.text-dark-grey { color: var(--dark-grey); }
+.rounded-0 { border-radius: 0; } /* Style brutaliste/sobre */
+
+.btn-primary {
+    background-color: var(--primary);
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,123,255,0.3);
+}
+
+.service-item i {
+    transition: 0.3s;
+}
+
+.service-item:hover i {
+    color: white !important;
+    transform: scale(1.1);
+}
+
+/* Container de la Timeline */
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* La ligne centrale */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: var(--light-grey);
+    top: 0; bottom: 0; left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+/* Alternance gauche/droite */
+.timeline-item:nth-child(odd) { left: 0; text-align: right; }
+.timeline-item:nth-child(even) { left: 50%; text-align: left; }
+
+/* Les icônes sur la ligne */
+.timeline-icon {
+    position: absolute;
+    width: 40px; height: 40px;
+    right: -20px; top: 20px;
+    background: var(--black);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10;
+}
+
+.timeline-item:nth-child(even) .timeline-icon { left: -20px; }
+
+/* Focus sur Socrate */
+.timeline-item.featured {
+    background: rgba(0, 123, 255, 0.1);
+    border: 1px solid var(--primary);
+    z-index: 11;
+}
+
+/* Responsive : Tout à gauche sur mobile */
+@media (max-width: 768px) {
+    .timeline-container::after { left: 31px; }
+    .timeline-item { width: 100%; padding-left: 70px; text-align: left !important; }
+    .timeline-icon { left: 11px !important; }
+}

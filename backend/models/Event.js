@@ -1,4 +1,4 @@
-const db = require('../config/db');
+const db = require('../configs/db');
 
 class Event {
     // Récupérer un événement avec TOUS les jeux qui y participent

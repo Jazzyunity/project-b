@@ -4,6 +4,8 @@ const GameIdea = require('../models/GameIdea');
 const { protect } = require('../middlewares/auth.middleware');
 const { restrictTo } = require('../middlewares/role.middleware');
 
+const gameController = require('../controllers/gameController');
+
 /**
  * PROTECTION GLOBALE
  * Toutes les routes définies dans ce fichier passent désormais par le middleware protect.

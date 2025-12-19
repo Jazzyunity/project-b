@@ -4,75 +4,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProjectB</title>
+    <title>ProjectB | Orchestrateur de Concepts</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <link rel="icon" href="data:,">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/landing.css">
 </head>
 
 <body>
 
-    <main class="py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="card border-0 shadow-sm rounded-4 p-3">
-                        <div class="card-body">
-                            <h5 class="fw-bold mb-3"><i class="bi bi-info-circle me-2"></i>Statut Système</h5>
-                            <hr class="text-muted opacity-25">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span>Serveur Node.js</span>
-                                <span class="badge rounded-pill bg-success-subtle text-success">Actif</span>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span>Sécurité</span>
-                                <span class="badge rounded-pill bg-primary-subtle text-primary">Helmet ON</span>
+    <header class="parallax-header">
+        <div class="parallax-bg"></div>
+        <div class="container h-100 d-flex align-items-center justify-content-center">
+            <div class="text-center z-index-1">
+                <h1 class="display-1 fw-black text-white mb-2 animate-fade-in">PROJECT<span
+                        class="text-primary">B</span></h1>
+                <p class="fs-4 text-white-50 mb-5 fw-light">L'espace où les idées deviennent des briques de
+                    développement.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="/login" class="btn btn-primary px-5 py-3 rounded-0 fw-bold">DÉMARRER LE PROJET</a>
+                    <a href="/explore" class="btn btn-outline-light px-5 py-3 rounded-0">EXPLORER</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5 bg-light-soft text-dark-grey">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <h2 class="display-5 fw-bold mb-4">Architecture Collaborative.</h2>
+                    <p class="lead">ProjectB structure le chaos créatif. Nous offrons un framework pour que chaque
+                        concept soit exploitable par des équipes de production.</p>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="p-4 border-start border-primary border-4 bg-white shadow-sm">
+                                <i class="bi bi-cpu fs-2 text-primary"></i>
+                                <h5 class="mt-3">Logique Pure</h5>
+                                <p class="small text-muted">Des blueprints clairs pour chaque mécanique de jeu.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-8">
-                    <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border-0">
-                        <h2 class="fw-bold border-start border-primary border-5 ps-3 mb-4">Tableau de Bord</h2>
-                        <p class="text-muted">
-                            Cette structure utilise le système de grille de Bootstrap. Le fond est réglé sur
-                            <code>#F2F2F2</code>
-                            et le contenu principal est encapsulé dans une carte blanche pour un contraste optimal et
-                            une lisibilité accrue.
-                        </p>
-
-                        <div class="row row-cols-1 row-cols-md-2 g-3 mt-4">
-                            <div class="col">
-                                <div class="p-3 border rounded-3 bg-light">
-                                    <i class="bi bi-shield-check text-primary fs-2"></i>
-                                    <h6 class="mt-2 fw-bold">Sécurité</h6>
-                                    <small class="text-muted">Protection CSRF et Headers Helmet activés.</small>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="p-3 border rounded-3 bg-light">
-                                    <i class="bi bi-lightning-charge text-warning fs-2"></i>
-                                    <h6 class="mt-2 fw-bold">Performance</h6>
-                                    <small class="text-muted">Vanilla JS pur sans bibliothèques lourdes.</small>
-                                </div>
+                        <div class="col-sm-6">
+                            <div class="p-4 border-start border-primary border-4 bg-white shadow-sm">
+                                <i class="bi bi-layers fs-2 text-primary"></i>
+                                <h5 class="mt-3">Stack Modulaire</h5>
+                                <p class="small text-muted">Assemblez des briques de gameplay existantes.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <script type="module" src="/js/main.js"></script>
-    <script src="/js/components/components.js"></script>
+    <section class="parallax-divider">
+        <div class="container h-100 d-flex align-items-center">
+            <h2 class="text-white fw-light display-4">"La meilleure façon de prédire le futur, c'est de le <span
+                    class="fw-bold">coder</span>."</h2>
+        </div>
+    </section>
+
+    <section class="py-5 bg-black text-white">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-4">
+                    <div class="service-item text-center">
+                        <i class="bi bi-shield-lock fs-1 text-primary mb-3"></i>
+                        <h4>Propriété B</h4>
+                        <p class="text-white-50 small">Sécurisation de vos concepts via notre système de validation
+                            communautaire.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item text-center">
+                        <i class="bi bi-terminal fs-1 text-primary mb-3"></i>
+                        <h4>Premium Access</h4>
+                        <p class="text-white-50 small">Les membres Premium peuvent instancier des projets et recruter
+                            des leads.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item text-center">
+                        <i class="bi bi-diagram-3 fs-1 text-primary mb-3"></i>
+                        <h4>Network</h4>
+                        <p class="text-white-50 small">Connectez-vous directement aux API des moteurs de jeu
+                            partenaires.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-dark text-white border-top border-primary">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold animate-fade-in">CYCLE DE VIE DU CONCEPT</h2>
+                <p class="text-white-50">De l'abstraction à l'instanciation technique.</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="bi bi-pencil-square"></i></div>
+                    <div class="timeline-content">
+                        <h4 class="text-primary">01. DÉPÔT DE CONCEPT</h4>
+                        <p>Tout membre peut soumettre une idée de jeu. L'idée est indexée dans le flux public de
+                            <strong>ProjectB</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="bi bi-exclamation-triangle"></i></div>
+                    <div class="timeline-content">
+                        <h4 class="text-warning">02. INCUBATION & RISQUE</h4>
+                        <p>Sans protection, une idée peut être <span class="text-white fw-bold">acaparée</span> par un
+                            membre <span class="badge bg-primary">PREMIUM</span> pour passer en phase de production.
+                            L'émetteur initial perd alors la main sur la direction du projet.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item featured">
+                    <div class="timeline-icon bg-primary shadow-glow"><i class="bi bi-shield-lock-fill"></i></div>
+                    <div class="timeline-content">
+                        <h4 class="text-white">03. PROTOCOLE SOCRATE</h4>
+                        <p class="lead fs-6">Le verrouillage de propriété. En activant ce protocole, vous devenez
+                            l'unique <strong>détenteur des droits de direction</strong> sur l'idée. Personne ne peut
+                            s'approprier votre concept : vous gardez le contrôle total, même face aux investisseurs
+                            Premium.</p>
+                        <div class="mt-2">
+                            <span class="badge bg-primary text-uppercase">Gouvernance Garantie</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="bi bi-gpu-card"></i></div>
+                    <div class="timeline-content">
+                        <h4 class="text-primary">04. INSTANCIATION</h4>
+                        <p>Phase de contact : les membres <strong>PREMIUM</strong> (développeurs/studios) sollicitent
+                            les créateurs pour financer et/ou coder le projet. L'idée devient une instance réelle sous la
+                            supervision du détenteur du concept.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 bg-black text-center border-top border-dark">
+        <div class="container">
+            <p class="text-secondary small">© 2025 PROJECTB — SYSTEM OPERATIONAL</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>

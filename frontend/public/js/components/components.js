@@ -66,34 +66,7 @@ function initLayout() {
         }
     });
 
-    // 3. Gestion dynamique du bouton Auth
-    const authContainer = document.getElementById('authLinks');
-    const isLoggedIn = document.cookie.split(';').some((item) => item.trim().startsWith('token='));
-
-    if (isLoggedIn) {
-        authContainer.innerHTML = `
-            <div class="dropdown">
-                <a class="btn btn-outline-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                    <i class="bi bi-person-circle"></i> Mon Compte
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end shadow">
-                    <li><a class="dropdown-item" href="/profile.html">Mon Profil</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item text-danger" href="#" id="logoutBtn">Déconnexion</a></li>
-                </ul>
-            </div>`;
-
-        document.getElementById('logoutBtn')?.addEventListener('click', async (e) => {
-            e.preventDefault();
-            await fetch('/api/v1/auth/logout');
-            window.location.href = '/login.html';
-        });
-    } else {
-        authContainer.innerHTML = `
-            <a class="btn btn-primary" href="/login.html">Connexion</a>`;
-    }
-
-    // 4. Initialisation forcée de Bootstrap pour le menu mobile
+    // 3. Initialisation forcée de Bootstrap pour le menu mobile
     if (typeof bootstrap !== 'undefined') {
         const menu = document.getElementById('navbarNav');
         if (menu) new bootstrap.Collapse(menu, { toggle: false });
