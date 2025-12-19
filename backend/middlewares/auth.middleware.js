@@ -1,17 +1,30 @@
 const jwt = require('jsonwebtoken');
+const User = require('../models/User');
 
-const protect = (req, res, next) => {
-    const token = req.cookies.token; // Récupère le token du cookie
+exports.protect = async (req, res, next) => {
+    let token;
 
-    if (!token) return res.status(401).json({ message: "Accès refusé. Connectez-vous." });
+    // Récupérer le token depuis les cookies
+    if (req.cookies && req.cookies.token) {
+        token = req.cookies.token;
+    }
+
+    if (!token) {
+        return res.status(401).json({ message: "Vous n'êtes pas connecté." });
+    }
 
     try {
+        // Vérifier le token
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        req.user = decoded; // Ajoute l'ID de l'utilisateur à la requête
+
+        // Vérifier si l'utilisateur existe encore
+        const currentUser = await User.findById(decoded.id);
+        if (!currentUser) return res.status(401).json({ message: "L'utilisateur n'existe plus." });
+
+        // AJOUTER L'USER À LA REQUÊTE
+        req.user = currentUser;
         next();
     } catch (err) {
-        res.status(401).json({ message: "Token invalide" });
+        res.status(401).json({ message: "Token invalide." });
     }
 };
-
-module.exports = { protect };
