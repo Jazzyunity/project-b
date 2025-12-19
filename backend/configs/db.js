@@ -1,8 +1,9 @@
 const { Pool } = require('pg');
+const Config = require('./config');
 require('dotenv').config();
 
 // En prod, on utilise la String complète. En local, on peut garder les variables séparées si on veut.
-const connectionString = process.env.DATABASE_URL;
+const connectionString = Config.db.url;
 
 const pool = new Pool({
     connectionString: connectionString,

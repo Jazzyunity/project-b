@@ -1,10 +1,12 @@
-const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+const User = require('../models/User');
+const Config = require('../configs/config');
+
 // Générateur de Token
 const signToken = (id) => {
-    return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '1d' });
+    return jwt.sign({ id }, Config.jwt.secret, { expiresIn: '1d' });
 };
 
 exports.register = async (req, res) => {
@@ -37,11 +39,7 @@ exports.login = async (req, res) => {
     const token = signToken(user.id);
 
     // 3. Envoyer le cookie
-    res.cookie('token', token, {
-        httpOnly: true, // Sécurité contre les scripts malveillants
-        secure: process.env.NODE_ENV === 'production',
-        maxAge: 24 * 60 * 60 * 1000 // 1 jour
-    });
+    res.cookie('token', token, Config.cookieSettings);
 
     res.status(200).json({ status: 'success', user: { id: user.id, username: user.username } });
 };

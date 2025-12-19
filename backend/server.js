@@ -6,6 +6,8 @@ const rateLimit = require('express-rate-limit');
 const cookieParser = require('cookie-parser')
 require('dotenv').config();
 
+const Config = require('./configs/config');
+
 const app = express();
 
 // --- SÉCURITÉ : CONFIGURATION DES MIDDLEWARES ---
@@ -38,7 +40,7 @@ app.use('/api/', limiter); // On applique le limiteur uniquement sur les routes 
 
 // 3. CORS : On n'autorise que notre propre domaine (sécurité essentielle)
 app.use(cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:3000',
+    origin: Config.appurl || 'http://localhost:3000',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
@@ -58,6 +60,7 @@ const viewRouter = require('./routes/view.routes');
 const authRouter = require('./routes/auth.routes');
 const gameRouter = require('./routes/game.routes');
 const eventRouter = require('./routes/event.routes');
+const config = require('./configs/config');
 
 // Utilisation des routeurs
 app.use('/', viewRouter);      // Pour servir les pages HTML
@@ -72,7 +75,7 @@ app.use((err, req, res, next) => {
 });
 
 // Lancement du serveur
-const PORT = process.env.PORT || 3000;
+const PORT = Config.port || 3000;
 app.listen(PORT, () => {
     console.log(`[Server] Sécurisé et démarré sur http://localhost:${PORT}`);
 });
