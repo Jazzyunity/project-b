@@ -1,9 +1,12 @@
 /* Palette de couleurs ProjectB */
 :root {
-    --primary: #007bff; /* Ton bleu original */
+    --primary: #007bff;
+    /* Ton bleu original */
     --black: #080808;
-    --dark-grey: #2d3436; /* Complémentaire : Gris Ardoise */
-    --light-grey: #636e72; /* Complémentaire : Acier */
+    --dark-grey: #2d3436;
+    /* Complémentaire : Gris Ardoise */
+    --light-grey: #636e72;
+    /* Complémentaire : Acier */
     --off-white: #f5f6fa;
 }
 
@@ -14,7 +17,10 @@ body {
     overflow-x: hidden;
 }
 
-.fw-black { font-weight: 900; letter-spacing: -3px; }
+.fw-black {
+    font-weight: 900;
+    letter-spacing: -3px;
+}
 
 /* Style des cartes "Le Pilier" */
 .feature-card {
@@ -27,7 +33,8 @@ body {
 }
 
 .feature-card.active {
-    border-color: var(--primary); /* Met en avant la carte centrale */
+    border-color: var(--primary);
+    /* Met en avant la carte centrale */
     transform: scale(1.05);
 }
 
@@ -58,11 +65,18 @@ body {
 }
 
 /* Textes à l'intérieur des cartes blanches */
-.text-dark { color: #2d3436 !important; }
-.text-muted { color: #636e72 !important; }
+.text-dark {
+    color: #2d3436 !important;
+}
+
+.text-muted {
+    color: #636e72 !important;
+}
 
 /* Adaptation pour la section sombre */
-.bg-black { background-color: #000000 !important; }
+.bg-black {
+    background-color: #000000 !important;
+}
 
 /* Parallax Logic */
 .parallax-header {
@@ -73,24 +87,38 @@ body {
 
 .parallax-bg {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 120%;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
-                url('https://images.unsplash.com/photo-1614850523296-e811cfbaf163?q=80&w=2070') center/cover;
-    background-attachment: fixed; /* L'effet de parallaxe simple */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+        url('https://images.unsplash.com/photo-1614850523296-e811cfbaf163?q=80&w=2070') center/cover;
+    background-attachment: fixed;
+    /* L'effet de parallaxe simple */
     z-index: -1;
 }
 
 .parallax-divider {
     height: 60vh;
-    background: linear-gradient(rgba(0,123,255,0.2), rgba(0,0,0,0.8)), 
-                url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070') center/cover;
+    background: linear-gradient(rgba(0, 123, 255, 0.2), rgba(0, 0, 0, 0.8)),
+        url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070') center/cover;
     background-attachment: fixed;
 }
 
 /* Utilities */
-.bg-light-soft { background-color: var(--off-white); }
-.text-dark-grey { color: var(--dark-grey); }
-.rounded-0 { border-radius: 0; } /* Style brutaliste/sobre */
+.bg-light-soft {
+    background-color: var(--off-white);
+}
+
+.text-dark-grey {
+    color: var(--dark-grey);
+}
+
+.rounded-0 {
+    border-radius: 0;
+}
+
+/* Style brutaliste/sobre */
 
 .btn-primary {
     background-color: var(--primary);
@@ -101,7 +129,7 @@ body {
 .btn-primary:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0,123,255,0.3);
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
 }
 
 .service-item i {
@@ -127,7 +155,9 @@ body {
     position: absolute;
     width: 2px;
     background: var(--light-grey);
-    top: 0; bottom: 0; left: 50%;
+    top: 0;
+    bottom: 0;
+    left: 50%;
     margin-left: -1px;
 }
 
@@ -139,22 +169,35 @@ body {
 }
 
 /* Alternance gauche/droite */
-.timeline-item:nth-child(odd) { left: 0; text-align: right; }
-.timeline-item:nth-child(even) { left: 50%; text-align: left; }
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
 
 /* Les icônes sur la ligne */
 .timeline-icon {
     position: absolute;
-    width: 40px; height: 40px;
-    right: -20px; top: 20px;
+    width: 40px;
+    height: 40px;
+    right: -20px;
+    top: 20px;
     background: var(--black);
     border: 2px solid var(--primary);
     border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 10;
 }
 
-.timeline-item:nth-child(even) .timeline-icon { left: -20px; }
+.timeline-item:nth-child(even) .timeline-icon {
+    left: -20px;
+}
 
 /* Focus sur Socrate */
 .timeline-item.featured {
@@ -165,7 +208,80 @@ body {
 
 /* Responsive : Tout à gauche sur mobile */
 @media (max-width: 768px) {
-    .timeline-container::after { left: 31px; }
-    .timeline-item { width: 100%; padding-left: 70px; text-align: left !important; }
-    .timeline-icon { left: 11px !important; }
+    .timeline-container::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        text-align: left !important;
+    }
+
+    .timeline-icon {
+        left: 11px !important;
+    }
+}
+
+/* Container global */
+.comparison-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* LA LIGNE EN ÉCLAT (HEADER) */
+.comparison-header-active {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    /* Léger éclat gris/blanc */
+    border-top: 2px solid var(--primary);
+    /* Ligne de tête bleue */
+    border-radius: 10px 10px 0 0;
+    padding: 25px 0;
+    margin-bottom: 10px;
+}
+
+.highlight-header {
+    color: var(--primary) !important;
+    font-weight: 900 !important;
+    font-size: 1rem !important;
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+/* LIGNES DE CONTENU */
+.comparison-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 20px 0;
+    transition: background 0.3s ease;
+}
+
+.comparison-row:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.feature-label {
+    flex: 2;
+    padding-left: 20px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.tier-label,
+.tier-cell {
+    flex: 1;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Accentuation verticale de la colonne Socrate */
+.highlight {
+    background: rgba(0, 123, 255, 0.02);
+    color: #fff;
+}
+
+.border-bottom-0 {
+    border-bottom: none !important;
 }
