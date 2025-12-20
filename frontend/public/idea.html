@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectB | Explore Genesis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/idea.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white" href="/">PROJECT<span class="text-primary">B</span></a>
+            <div class="d-flex align-items-center">
+                <div class="dropdown">
+                    <button class="btn btn-dark btn-sm rounded-circle" type="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-person"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Sidebar Filters -->
+            <div class="col-md-3 d-none d-md-block">
+                <h6 class="text-primary fw-bold mb-4">FILTRES</h6>
+                <div class="mb-4">
+                    <label class="small text-muted mb-2">GENRE</label>
+                    <select class="form-select form-select-sm">
+                        <option>Tous les genres</option>
+                        <option>RPG</option>
+                        <option>FPS</option>
+                        <option>Survival</option>
+                    </select>
+                </div>
+                <div class="form-check form-switch mt-4">
+                    <input class="form-check-input" type="checkbox" id="socrateOnly">
+                    <label class="form-check-label small text-white" for="socrateOnly">Socrate Protégés</label>
+                </div>
+            </div>
+
+            <!-- Feed -->
+            <div class="col-md-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="fw-bold text-white">LATEST GENESIS</h4>
+                    <span class="text-muted small">Showing 124 concepts</span>
+                </div>
+
+                <!-- Idea Card 1: SOCRATE PROTECTED (Sensitive info is NOT in source) -->
+                <div class="idea-card">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h5 class="fw-bold text-white mb-1">Cyber-Noir Investigation</h5>
+                            <span class="text-primary x-small fw-bold"
+                                style="font-size: 0.7rem; letter-spacing: 1px;">SOCRATE PROTOCOL</span>
+                        </div>
+                        <div class="status-icon status-socrate">
+                            <i class="bi bi-shield-lock-fill"></i>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <!-- Content replacement: the real description is not present in the HTML at all -->
+                        <div class="protected-placeholder">
+                            <i class="bi bi-lock-fill"></i>
+                            <span>Sovereign Content Shielded</span>
+                        </div>
+                        <div class="security-line"></div>
+                        <div class="security-line security-line-short"></div>
+                    </div>
+
+                    <div class="d-flex align-items-center mt-3 text-muted small">
+                        <span class="me-3"><i class="bi bi-tag-fill text-primary"></i> RPG / Cyberpunk</span>
+                        <span><i class="bi bi-clock"></i> 2h ago</span>
+                    </div>
+                </div>
+
+                <!-- Idea Card 2: PUBLIC DOMAIN -->
+                <div class="idea-card">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h5 class="fw-bold text-white mb-1">Echoes of the Void</h5>
+                            <span class="text-muted x-small fw-bold"
+                                style="font-size: 0.7rem; letter-spacing: 1px;">PUBLIC DOMAIN</span>
+                        </div>
+                        <div class="status-icon status-public">
+                            <i class="bi bi-unlock"></i>
+                        </div>
+                    </div>
+                    <!-- Full description visible for public concepts -->
+                    <p class="idea-description mt-3">Minimalist space exploration based on sound frequency and material
+                        resonance.</p>
+                    <div class="d-flex align-items-center mt-3 text-muted small">
+                        <span class="me-3"><i class="bi bi-tag-fill text-primary"></i> Simulation / Zen</span>
+                        <span><i class="bi bi-clock"></i> 5h ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="btn btn-primary btn-genesis" data-bs-toggle="modal" data-bs-target="#genesisModal">
+        <i class="bi bi-plus-lg"></i>
+    </button>
+
+    <!-- Genesis Creation Modal -->
+    <div class="modal fade" id="genesisModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body p-5">
+                    <div class="d-flex justify-content-between align-items-start mb-4">
+                        <div>
+                            <h3 class="fw-bold text-white">INITIATE GENESIS</h3>
+                            <p class="text-muted small">Structurez votre concept pour la matrice.</p>
+                        </div>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <form id="genesisForm">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-section-title">CONCEPT CORE</div>
+                                <div class="mb-3">
+                                    <label class="form-label small text-white-50">Titre du Concept</label>
+                                    <input type="text" class="form-control" placeholder="Nom du projet..." required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small text-white-50">Pitch (One Liner)</label>
+                                    <textarea class="form-control" rows="3"
+                                        placeholder="Résumez l'expérience en une phrase choc..."></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-4 border-start border-secondary">
+                                <div class="form-section-title">METADATA</div>
+                                <div class="mb-3">
+                                    <label class="form-label small text-white-50">Genre</label>
+                                    <select class="form-select">
+                                        <option>Action</option>
+                                        <option>Aventure</option>
+                                        <option>Horreur</option>
+                                        <option>Stratégie</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <div class="p-3 bg-primary bg-opacity-10 border border-primary rounded">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="activateSocrate"
+                                                checked>
+                                            <label class="form-check-label fw-bold small text-primary"
+                                                for="activateSocrate">PROTOCOLE SOCRATE</label>
+                                        </div>
+                                        <p class="mb-0 x-small text-white-50 mt-1" style="font-size: 0.65rem;">Active le
+                                            verrouillage de souveraineté dès la publication.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-end mt-4">
+                            <button type="submit" class="btn btn-primary px-5 rounded-pill fw-bold">PUBLIER DANS LE
+                                FLUX</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/i18n.js"></script>
+</body>
+
+</html>

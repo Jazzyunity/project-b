@@ -17,4 +17,8 @@ router.get('/login', (req, res) => {
     res.sendFile(path.join(publicPath, 'login.html'));
 });
 
+router.get('/idea', (req, res) => {
+    res.sendFile(path.join(publicPath, 'idea.html'));
+});
+
 module.exports = router;
