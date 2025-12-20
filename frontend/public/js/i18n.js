@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Configuration
     const languageSelector = document.getElementById('language-selector');
-    const defaultLang = 'jp';
+    const defaultLang = 'en';
     const savedLang = localStorage.getItem('preferredLang') || defaultLang;
 
     /**
