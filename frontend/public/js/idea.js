@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', fetchGenesis);
 async function fetchGenesis() {
     try {
         // Appel vers votre endpoint backend (ex: /api/genesis)
-        const response = await fetch('/api/genesis');
+        const response = await fetch('/api/v1/game/all');
         const data = await response.json(); // Array of objects from Postgres
 
         renderFeed(data);

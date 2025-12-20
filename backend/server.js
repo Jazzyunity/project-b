@@ -10,6 +10,8 @@ const Config = require('./configs/config');
 
 const app = express();
 
+app.set('trust proxy', 1);
+
 // --- SÉCURITÉ : CONFIGURATION DES MIDDLEWARES ---
 
 // 1. Helmet : Configure les headers HTTP pour bloquer XSS, Clickjacking, etc.
